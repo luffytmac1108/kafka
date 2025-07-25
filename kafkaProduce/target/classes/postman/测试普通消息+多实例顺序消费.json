@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "9bf43285-4abc-4e1f-a163-ca8c6c3c9ca7",
+		"name": "kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24990907"
+	},
+	"item": [
+		{
+			"name": "普通消息",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/send?message=我只是一条普通消息",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"send"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "我只是一条普通消息"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "顺序消息-发往0分区",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/sendSequentialMessage?entityId=VIP_xiaoxiao&message=我是VIP客户",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sendSequentialMessage"
+					],
+					"query": [
+						{
+							"key": "entityId",
+							"value": "VIP_xiaoxiao"
+						},
+						{
+							"key": "message",
+							"value": "我是VIP客户"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "顺序消息-发往1分区",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/sendSequentialMessage?entityId=GUEST_laowang&message=我是一个访客",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sendSequentialMessage"
+					],
+					"query": [
+						{
+							"key": "entityId",
+							"value": "GUEST_laowang"
+						},
+						{
+							"key": "message",
+							"value": "我是一个访客"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "顺序消息-发往2分区",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/sendSequentialMessage?entityId=ADMIN_xiaowyang&message=我是一位管理员",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sendSequentialMessage"
+					],
+					"query": [
+						{
+							"key": "entityId",
+							"value": "ADMIN_xiaowyang"
+						},
+						{
+							"key": "message",
+							"value": "我是一位管理员"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
